@@ -16,10 +16,9 @@ class Student extends User {
   }
 
   get getCourse() {
-    let date = new Date().getFullYear() - this.year;
-    if (date === 0) date++;
-    if (date > 5) return `${this.name} has already left!`;  
-    return date;
+    let yearDiff = new Date().getFullYear() - this.year + 1;
+    if (yearDiff > 5) return `${this.name} has already left!`;  
+    return yearDiff;
   }
 }
 
