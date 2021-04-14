@@ -7,8 +7,8 @@ class Student extends User {
   }
 
   set year(newValue) {
-    if (typeof newValue !== "number")
-      throw new TypeError("Incorrect variable type!");
+    if (typeof newValue !== "number") throw new TypeError("Incorrect variable type!");
+    if (newValue > (new Date().getFullYear())) throw new RangeError("Year is bigger then current!");
     this._year = newValue;
   }
   get year() {
